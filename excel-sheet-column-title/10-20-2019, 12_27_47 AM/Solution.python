@@ -1,0 +1,25 @@
+// https://leetcode.com/problems/excel-sheet-column-title
+
+class Solution(object):
+    def convertToTitle(self, n):
+        """
+        :type n: int
+        :rtype: str
+        """
+        dic = {}
+        i = 0
+        for w in range(65, 91):
+            dic[i] = chr(w)
+            i += 1
+        ans = ""        
+        while n > 26:
+            n -= 1
+            res = n % 26
+            n //= 26
+            ans = str(dic[res]) + ans
+        
+        ans = str(dic[n-1]) + ans
+        
+        
+        return ans
+        

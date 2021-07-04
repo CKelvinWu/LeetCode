@@ -1,0 +1,16 @@
+// https://leetcode.com/problems/two-sum-ii-input-array-is-sorted
+
+class Solution(object):
+    def twoSum(self, numbers, target):
+        """
+        :type numbers: List[int]
+        :type target: int
+        :rtype: List[int]
+        """
+        dic = {}        
+        for index, value in enumerate(numbers):
+            sub = target-value
+            if sub in dic:
+                return[dic[sub]+1, index+1]
+            else:
+                dic[value] = index
